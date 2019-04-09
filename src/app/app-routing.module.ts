@@ -11,12 +11,10 @@ const routes: Routes = [
   {
     path: 'dogs',
     loadChildren: './dogs/dogs.module#DogsModule',
-    // component: NewsComponent
   },
   {
     path: 'news',
     loadChildren: './news/news.module#NewsModule',
-    // component: DogsComponent
   },
 ];
 
