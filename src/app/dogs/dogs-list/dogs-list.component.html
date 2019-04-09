@@ -1,0 +1,14 @@
+<div class="dogs-list">
+  <h2>Our dogs </h2>
+  <ul>
+    <li
+      class="dogs-list__item"
+      *ngFor="let dog of dogs$ | async"
+      [class.selected]="dog === selectedDog"
+      (click)="onSelect(dog)"
+    >
+      <span class="dogs-list__item-name"> Name: {{dog.name}}</span>
+      <span class="dogs-list__item-breed"> Breed: {{dog.breed}}</span>
+    </li>
+  </ul>
+</div>

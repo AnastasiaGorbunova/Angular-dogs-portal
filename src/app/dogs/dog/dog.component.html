@@ -1,0 +1,11 @@
+<div class="dog" *ngIf="dog">
+
+  <h2>Change information about dog {{dog.name}}</h2>
+  <label> Name:
+    <input [(ngModel)]="dog.name" placeholder="Name"/>
+
+  </label>
+  <label> Breed:
+    <input [(ngModel)]="dog.breed" placeholder="Breed"/>
+  </label>
+</div>
