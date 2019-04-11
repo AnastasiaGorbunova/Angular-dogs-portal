@@ -1,0 +1,15 @@
+<div class="news-list">
+  <h2>News list</h2>
+
+  <ul>
+    <li
+      class="news-list__item"
+      *ngFor="let newDetails of news$ | async"
+      (click)="onSelect(newDetails)"
+    >
+      <span class="news-list__item-dogId"> Name: {{newDetails.dogId}}</span>
+      <span class="news-list__item-text"> Breed: {{newDetails.text}}</span>
+    </li>
+  </ul>
+
+</div>

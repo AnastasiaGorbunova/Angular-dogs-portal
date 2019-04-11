@@ -1,4 +1,3 @@
-<div class="news">
-  <h3 class="news__title"> Some news about our dogs...</h3>
-</div>
+<app-news-list (newSelected)="onNewSelected($event)"></app-news-list>
 
+<app-new-details [new]="selectedNew"></app-new-details>

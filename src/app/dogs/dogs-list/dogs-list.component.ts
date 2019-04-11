@@ -1,9 +1,8 @@
-import {Component, OnInit, Output, EventEmitter} from '@angular/core';
-import {Observable} from 'rxjs';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Observable } from 'rxjs';
 
-import {DogService} from '../shared/dog.service';
-
-import {Dog} from '../shared/dog';
+import { DogService } from '@app/dogs/shared/dog.service';
+import { Dog } from '@app/dogs/shared/dog';
 
 @Component({
   selector: 'app-dogs-list',
@@ -21,7 +20,6 @@ export class DogsListComponent implements OnInit {
 
   ngOnInit() {
     this.getDogsList();
-    // this.dogService.setDog();
   }
 
   getDogsList(): void {

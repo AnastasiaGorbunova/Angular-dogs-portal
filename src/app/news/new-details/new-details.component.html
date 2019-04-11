@@ -1,0 +1,12 @@
+<div class="new-details" *ngIf="new">
+  <h2 class="new-details__title">New details: </h2>
+
+  <div class="new-details__description">
+    Id: {{new.newId}}
+    Text:{{new.text}}
+    DogId: {{new.dogId}}
+    Dog name: {{new.dog.name}}
+    Dog breed: {{new.dog.breed}}
+  </div>
+
+</div>

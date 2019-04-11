@@ -1,10 +1,10 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {FormsModule} from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
-import {DogComponent} from './dog/dog.component';
-import {DogsListComponent} from './dogs-list/dogs-list.component';
-import {DogsComponent} from './dogs.component';
+import { DogComponent } from './dog/dog.component';
+import { DogsListComponent } from './dogs-list/dogs-list.component';
+import { DogsComponent } from './dogs.component';
 import { DogsRoutingModule } from './dogs-routing.module';
 
 
@@ -20,4 +20,6 @@ import { DogsRoutingModule } from './dogs-routing.module';
     DogsRoutingModule,
   ]
 })
-export class DogsModule {}
+
+export class DogsModule {
+}
