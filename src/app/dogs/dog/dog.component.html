@@ -7,7 +7,9 @@
   </label>
 
   <label> Breed:
-    <input [(ngModel)]="dog.breed" placeholder="Breed"/>
+    <input [ngModel]="dog.breed" placeholder="Breed" />
   </label>
+
+  <button (click)="updateDog()">Update</button>
 
 </div>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { Dog } from './dog';
 
@@ -10,16 +11,30 @@ import { Dog } from './dog';
 
 export class DogService {
 
-  constructor(private db: AngularFireDatabase) {}
+  constructor(private db: AngularFireDatabase) {
+  }
 
   getDogsList(): Observable<Dog[]> {
     return this.db.list<Dog>('/dogs')
-      .valueChanges();
+      .snapshotChanges()
+      .pipe(
+        map(dogsSnapshots => dogsSnapshots.map((dogsSnapshot) => ({
+            key: dogsSnapshot.key,
+            ...dogsSnapshot.payload.val()
+          }))
+        )
+      );
   }
 
-  setDog(): Promise<any> {
-    return  this.db.list('/dogs')
-      .push({name: 'fdfdf', breed: 'kek'});
+  addDog(dog: Dog): Promise<any> {
+    return this.db.list('/dogs')
+      .push(dog);
+  }
+
+  setDog(dogId: string, dog: Dog): Promise<any> {
+    console.log('dog', dog);
+    return this.db.object(`/dogs/${dogId}`)
+      .update(dog);
   }
 
   getDogById(dogId: string): Observable<Dog> {
